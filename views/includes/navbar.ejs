@@ -1,0 +1,137 @@
+<style>
+  .btn-search {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 5cap;
+    padding: 0 0.7rem 0 1rem;
+  }
+  .btn-search:hover {
+    background-color: #fe424d;
+    color: #fff;
+  }
+  .btn-search i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .search-input {
+    border-radius: 5cap;
+    padding: 0.5rem 2rem 0.5rem 4rem;
+  }
+
+  @media (max-width : 1000px) {
+    .navbar {
+      display: none !important;
+    } 
+    .sm-nav {
+      margin: 1rem 1rem 0 1rem ;
+      display: inline-block;
+      padding-bottom: 1rem;
+    }
+    .sm-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      z-index: 1000;
+    }
+    .opns {
+      text-align: center;
+      margin-right: 2rem;
+      margin-top: 1rem;
+    }
+    .opns p {
+      font-size: small;
+    }
+    .opns:hover {
+      cursor: pointer;
+    }
+    .xyz {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  @media (min-width : 1000px) {
+    .sm-nav {
+      display: none;
+    }
+    .sm-bottom {
+      display: none;
+    }
+
+  }
+
+</style>
+
+<div class="sm-bottom">
+  <div class="explore opns">
+    <a href="/listings"><i class="fa-solid xyz fa-magnifying-glass"></i></a>
+    <p><a class="xyz" href="/listings">Explore</a></p>
+  </div>
+  <div class="host opns">
+    <a href="/listings/new"><i class="fa-solid xyz fa-font-awesome"></i></a>
+    <p><a class="xyz" href="/listings/new">Become a host</a></p>
+  </div>
+  <% if(!currUser) { %> 
+  <div class="login opns">
+    <a href="/login"><i class="fa-solid xyz fa-user li"></i></a>
+    <p><a class="xyz" href="/login">Login</a></p>
+  </div>
+  <% } else { %>
+  <div class="login opns">
+    <a href="/logout"><i class="fa-solid xyz fa-user lo"></i></a>
+    <p><a class="xyz" href="/logout">Logout</a></p>
+  </div>
+  <% } %>
+</div>
+
+<div class="navbar-nav  border-bottom sm-nav">
+  <form class="d-flex" role="search" method="GET" action="/listings/search">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <input class="form-control ms-2 me-2 search-input"  name="location" type="search" placeholder="Search Destination"/>
+    <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+</div>
+
+
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <button class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNavAltMarkup" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search" method="GET" action="/listings/search">
+          <input class="form-control me-2 search-input" name="location" type="search" placeholder="Search Destination"/>
+          <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+      
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Become a host</a>
+        <% if(!currUser) { %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        <% } %>
+        <% if(currUser) { %>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+
+  </div>
+</nav>
