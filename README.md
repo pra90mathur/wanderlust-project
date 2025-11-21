@@ -34,6 +34,11 @@ This project showcases my skills in full-stack development, routing, templating,
 - Built with extendability in mind — you can add more features like user profiles, reviews, bookings.
 
 
+## Live Demo  
+Check out the live version of this project here:  
+[👉 Live Demo] https://wanderlust-project-1-tsot.onrender.com/listings
+
+
 ## 🛠 Installation & Setup  
 1. Clone the repository:  
    ```bash
