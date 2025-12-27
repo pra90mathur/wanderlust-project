@@ -36,7 +36,7 @@ This project showcases my skills in full-stack development, routing, templating,
 
 ## Live Demo  
 Check out the live version of this project here:  
-[👉 Live Demo](https://wanderlust-project-1-tsot.onrender.com/listings)
+[👉 Live Demo](https://wanderlust-project-t8wz.onrender.com/listings)
 
 
 ## 🛠 Installation & Setup  
